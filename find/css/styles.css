@@ -1,0 +1,26 @@
+table,
+td,
+th,
+tr {
+  text-align: left;
+  color: whitesmoke;
+}
+
+table {
+  margin: auto;
+  height: 300px;
+  width: 100%;
+  border: 1px solid rgba(90, 90, 90, 0.95);
+}
+
+tr {
+  border: 1px solid rgba(90, 90, 90, 0.95);
+}
+
+td {
+  border: 1px solid rgba(90, 90, 90, 0.95);
+}
+
+th {
+  border: 1px solid rgba(90, 90, 90, 0.95);
+}
