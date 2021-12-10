@@ -1,0 +1,12 @@
+{
+  "name": "front-end-class",
+  "version": "1.0.0",
+  "author": {
+    "name": "Lígia Santos",
+    "email": "ligia.baptista.santos@gmail.com",
+    "url": "https://github.com/Li-hub-san/front-end-class"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
