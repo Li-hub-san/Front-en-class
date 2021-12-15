@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido</title>
+</head>
+<body>
+<div>
+    <a href="../index.html"><img src="../imagens/index-image.jpg" alt="veggies-image" width="75"></a>
+    <br>
+
+    <h2>Pedido efetuado com sucesso</h2>
+
+    <p>Espere por volta de <mark></mark> minutos</p>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const tempo = urlParams.get('tempo');
+        document.querySelector('mark').innerText = tempo || '?';
+    </script>
+</div>
+</body>
+</html>
