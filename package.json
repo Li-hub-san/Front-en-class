@@ -6,7 +6,15 @@
     "email": "ligia.baptista.santos@gmail.com",
     "url": "https://github.com/Li-hub-san/front-end-class"
   },
+  "scripts": {
+    "start": "gulp watch"
+  },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "prettier": "^2.5.1",
+    "sass": "^1.46.0"
   }
 }

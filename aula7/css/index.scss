@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+/** Header **/
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.float-100 {
+  float: left;
+  width: 100%;
+}
+
+@mixin column($base-color, $col) {
+  &:nth-child(#{$col}) {
+    background-color: lighten($base-color, 6.8% * ($col - 1))
+  }
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  @for $col-number from 1 through 3 {
+    @include column(#aaa, $col-number);
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@mixin flex-center {
+  float: left;
+  background: pink;
+  font-size: 70px;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+.extra-element {
+  @include flex-center;
+}

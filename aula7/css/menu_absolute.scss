@@ -1,0 +1,11 @@
+.menu-absolute {
+  position: fixed;
+  right: 8px;
+  top: calc(50% - 110px);
+  padding: 50px;
+  background-image: url('/aula7/images/help.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 5px solid;
+  cursor: pointer;
+}

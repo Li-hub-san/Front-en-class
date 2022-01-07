@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/menu-absolut.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/compiled.css">
 </head>
 <body>
 
-<div class="header flaot 100">
-    <h2>Banco Requalificar</h2>
+<div class="header float-100">
+  <h2>Banco Requalificar</h2>
 </div>
 
-<div class="menu-horizontal flat-100">
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
+<div class="menu-horizontal float-100">
+  <ul>
+    <li>
+      <a class="active"
+         href="#home">Home</a>
+    </li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
 </div>
 
 <div class="row float-100">
-        <div class="column menu-vertical" style="background-color: #aaa">
-            <ul>
-                <li><a href="#home">Saldos</a></li>
-                <li><a href="#news">Crédito</a></li>
-                <li><a href="#contact">Poupanças</a></li>
-                <li><a href="#about">Informações Gerais</a></li>
-            </ul>
-        </div>
+  <div class="column menu-vertical">
+    <ul>
+      <li><a href="#home">Saldos</a></li>
+      <li><a href="#news">Crédito</a></li>
+      <li><a href="#contact">Poupanças</a></li>
+      <li><a href="#about">Informações Gerais</a></li>
+    </ul>
+  </div>
 
-    <div class="column" style="background-color: #bbb">Column</div>
-    <div class="column" style="background-color: #ccc">Column</div>
+  <div class="column">Column</div>
+
+  <div class="column">Column</div>
 </div>
 
-<div class="footer"><p>footer</p></div>
+<div class="footer float-100"><p>Footer</p></div>
 
-<div class="menu-absolut"> </div>
+<div class="menu-absolute"></div>
+
+<div class="extra-element">Fui estilizado com uma @mixin em scss</div>
 
 </body>
 </html>

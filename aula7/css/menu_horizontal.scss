@@ -1,0 +1,23 @@
+.menu-horizontal {
+  float: left;
+  width: 100%;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a {
+    padding: 13px;
+    border: 4px solid pink;
+    background-color: #dddddd;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}
