@@ -8,4 +8,13 @@
   background-repeat: no-repeat;
   border: 5px solid;
   cursor: pointer;
+  transition: border-radius .5s, width .5s, height .5s, filter .5s;
+  width: 100px;
+  height: 100px;
+}
+
+.menu-absolute:hover {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }

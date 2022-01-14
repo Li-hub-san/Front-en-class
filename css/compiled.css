@@ -25,7 +25,7 @@ body {
   width: 100%;
 }
 
-/* Create three equal columns that floats next to each other */
+/* Create three equal s that floats next to each other */
 .column {
   float: left;
   width: 33.33%;
@@ -47,6 +47,7 @@ body {
 }
 .column:nth-child(3) {
   background-color: #cdcdcd;
+  padding: 15px;
 }
 
 /* Clear floats after the columns */
@@ -167,4 +168,27 @@ body {
 
 body {
   background: white;
+}
+
+.contacts + div {
+  overflow: auto;
+}
+
+.footer span {
+  height: 44px;
+  margin-left: 10px;
+  float: right;
+  width: 43px;
+}
+
+.home {
+  background: url(https://www.w3schools.com/css/img_navsprites.gif) 0 0;
+}
+
+.voltar {
+    background: url(https://www.w3schools.com/css/img_navsprites.gif) -47px;
+}
+
+.frente {
+    background: url(https://www.w3schools.com/css/img_navsprites.gif) -91px;
 }
