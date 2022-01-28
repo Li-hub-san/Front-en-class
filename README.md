@@ -19,3 +19,5 @@ JQuery biblioteca (ver integrity).
 
 Colocar ficheiro de JQuery no html,
 paragrafo e botão e clicando no botão ele apagar o paragrafo.
+
+possivel fazer jogos com biblioteca JQuery: usando sprites e posiçoes.
