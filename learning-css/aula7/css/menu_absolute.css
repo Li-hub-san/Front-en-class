@@ -3,12 +3,12 @@
   right: 8px;
   top: calc(50% - 110px);
   padding: 50px;
-  background-image: url('/aula7/images/help.png');
+  background-image: url('/html-learning/aula7learning/aula7/images/help.png');
   background-size: 100%;
   background-repeat: no-repeat;
   border: 5px solid;
   cursor: pointer;
-  transition: border-radius .5s, width .5s, height .5s, filter .5s;
+  transition: border-radius 0.5s, width 0.5s, height 0.5s, filter 0.5s;
   width: 100px;
   height: 100px;
 }
