@@ -1,14 +1,18 @@
-console.log("Adicionei o javascript.");
+console.log('Adicionei o javascript.');
 
-// alert("Adicionei o script");
+alert('Adicionei o script');
 
-// debugger;
+debugger;
 
 console.log(navigator.userAgent);
 
-document.getElementById("section-p-1").style.color = "white";
-document.getElementById("section-p-1").style.background = "black";
+let sectionP1 = document.getElementById('section-p-1');
+sectionP1.style.color = 'white';
+sectionP1.style.background = 'black';
+console.log(sectionP1);
 
-document.getElementsByTagName("p")[1].addEventListener("click", function () {
-    alert("Hello World!")
-})
+let pElements = document.getElementsByTagName('p');
+console.log(pElements);
+pElements[1].addEventListener('click', function () {
+  alert('Hello World!');
+});

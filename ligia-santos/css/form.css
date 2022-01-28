@@ -1,0 +1,52 @@
+.column-form {
+    float: right;
+    height: 420px;
+    width: 80%;
+    background-color: #808000;
+    border: 5px double #FAFF04;
+    padding: 10px;
+    position: relative;
+    overflow: auto;
+}
+
+p{
+    font-size: 16px;
+}
+
+form {
+    font-size: 13px;
+}
+
+form label {
+    color: #963F21;
+    font-style: italic;
+    text-align: center;
+}
+
+section div p {
+    color: #E41700;
+}
+
+p + p:first-line,
+section div p,
+section p,
+section + p {
+    font-weight: bolder;
+}
+
+
+section p {
+    color: #8A0900;
+}
+
+section + p {
+    color: #1A008B;
+}
+
+input[type="submit"] {
+    position: absolute;
+    right: 12px;
+    top: 303px;
+    height: 80px;
+    width: 80px;
+}

@@ -1,0 +1,38 @@
+.menu-vertical {
+    float: left;
+    width: 20%;
+    height: 420px;
+}
+
+.menu-vertical ul {
+    padding-left: 0;
+    margin: 0;
+    border: 9px solid #808000;
+    height: 100%;
+}
+
+.menu-vertical ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.menu-vertical ul li a {
+    display: block;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.menu-vertical ul li a:first-child {
+    background-color: white !important;
+    color: black;
+}
+
+.menu-vertical ul li a:hover {
+    background-color: #808080 !important;
+}
+
+
+.menu-vertical ul li:first-letter {
+    font-size: 25px;
+}
+

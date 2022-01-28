@@ -1,0 +1,31 @@
+.menu-horizontal {
+    text-align: right;
+    background-color: #F5F5DC;
+}
+
+.menu-horizontal ul {
+    margin: 0;
+}
+
+.menu-horizontal ul li {
+    display: inline-block;
+    text-align: center;
+    background-color: #DDDDDD;
+    margin: 2px 2px 2px;
+}
+
+.menu-horizontal ul li a{
+    color: rebeccapurple;
+    display: block;
+    padding: 15px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu-horizontal ul li a:hover,
+.menu-horizontal ul li:hover {
+    background-color: darkgreen;
+    color: lightgrey;
+}
