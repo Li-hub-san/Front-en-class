@@ -1,21 +1,37 @@
-let a = 10;
-a = "hello";
-console.log(a);
+// let a = 10;
+// a = "hello";
+// console.log(a);
+//
+// var b = 5;
+// b = 20;
+// console.log(b);
+//
+// let c;
+// c = 21;
+// console.log("let:" + c);
+//
+// function doSomething() {
+//     const numero1 = 5;
+//
+//     if (numero1 > 0) {
+//         console.log("A minha variavel é maior que 0.")
+//     }
+// }
+//
+// console.log(doSomething());
 
-var b = 5;
-b = 20;
-console.log(b);
+const pTag =document.getElementsByTagName("p");
+const buttonTag = document.getElementsByTagName("button");
 
-let c;
-c = 21;
-console.log("let:" + c);
+function removeParagraphTags(){
 
-function doSomething() {
-    const numero1 = 5;
+    for (let i = 0; i < 4; i++) {
+        let currentTag = pTag[i];
+        console.log(currentTag);
 
-    if (numero1 > 0) {
-        console.log("A minha variavel é maior que 0.")
+        if (currentTag.innerHTML % 2 !== 0) {
+            currentTag.remove();
+        }
     }
-}
 
-console.log(doSomething());
+}
