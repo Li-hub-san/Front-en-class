@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script type="text/javascript">
+    styleButtons();
+  </script>
   <title>Title</title>
 </head>
 <body>
@@ -13,20 +16,44 @@
 <p>3</p>
 <p>4</p>
 <p>12</p>
-<p>23</p>
+<p>24</p>
+<p>51</p>
+<p>566545</p>
 <p>Eu sou texto.</p>
 <p>4515</p>
 <button type="button"
-        onclick="removeOddParagraphTags()">Try it
+        onclick="removeOddParagraphTags()">Remover números ímpares!
 </button>
+<br>
 <br>
 <div id="info">
 
 </div>
 <br>
 <button
-  onclick="printInfo()">Try it!
+  onclick="printInfo()">Imprimir alunos!
 </button>
+<br>
+<br>
+<button type="button"
+        onclick="styleClass('aluno')">Estilizar alunos!
+</button>
+<br>
+<br>
+<button type="button"
+        onclick="styleTag('h2', '#AA3939')">Estilizar header!
+</button>
+<br>
+<br>
+<button type="button"
+        onclick="removeClassStyle('aluno')">Remover estilo aluno!
+</button>
+<br>
+<br>
+<button type="button"
+        onclick="paintBody()">Pintar corpo!
+</button>
+<br>
 <script src="script.js"></script>
 </body>
 </html>
