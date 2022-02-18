@@ -17,45 +17,36 @@
 <p>566545</p>
 <p>Eu sou texto.</p>
 <p>4515</p>
-<button type="button"
-        onclick="removeOddParagraphTags()">Remover números ímpares!
-</button>
 <br>
-<br>
-<div id="info">
+<div id="btnWrapper">
+  <button type="button"
+          onclick="removeOddParagraphTags()">Remover números ímpares!
+  </button>
 
+  <button type="button"
+          onclick="printInfo()">Imprimir alunos!
+  </button>
+
+  <button type="button"
+          onclick="styleClass('aluno')">Estilizar alunos!
+  </button>
+  <button type="button"
+          onclick="styleTag('h2', '#AA3939', '30px')">Estilizar header!
+  </button>
+
+  <button type="button"
+          onclick="paintBody()">Pintar corpo!
+  </button>
+
+  <button type="button"
+          onclick="styleButtons()">Alterar botões!
+  </button>
+
+  <button type="button"
+          onclick="removeClassStyle('aluno')">Remover estilo aluno!
+  </button>
 </div>
-<br>
-<button
-  onclick="printInfo()">Imprimir alunos!
-</button>
-<br>
-<br>
-<button type="button"
-        onclick="styleClass('aluno')">Estilizar alunos!
-</button>
-<br>
-<br>
-<button type="button"
-        onclick="styleTag('h2', '#AA3939')">Estilizar header!
-</button>
-<br>
-<br>
-<button type="button"
-        onclick="removeClassStyle('aluno')">Remover estilo aluno!
-</button>
-<br>
-<br>
-<button type="button"
-        onclick="paintBody()">Pintar corpo!
-</button>
-<br>
-<br>
-<br>
-<button type="button"
-        onclick="styleButtons()">Alterar botões!
-</button>
-<br>
+<div id="info"></div>
 <script src="script.js"></script>
 </body>
 </html>
