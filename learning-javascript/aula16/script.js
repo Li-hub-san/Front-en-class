@@ -27,5 +27,4 @@ function createAluno(divEl, aluno, key) {
     paragraphEl.appendChild(text);
     paragraphEl.appendChild(text1);
     divEl.appendChild(paragraphEl);
-
 }
