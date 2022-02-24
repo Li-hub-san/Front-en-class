@@ -47,6 +47,89 @@
   </button>
 </div>
 <div id="info"></div>
+<br>
+
+<div>
+  <h3>1. Write a JavaScript program to list the properties of a JavaScript object.</h3>
+  <div><p>const student = {
+    firstName: 'David',
+    lastName: 'Rayy',
+    sclass: 'VI',
+    rollno: 12,
+    field: 'something else'
+    };</p></div>
+  <div id="list-props"></div>
+  <br>
+  <button type="button"
+          onclick="exercise1()">PRINT PROPS
+  </button>
+</div>
+
+<div>
+  <h3>2. Write a JavaScript program to delete the rollno property from the following object. Also print the object
+    before or after deleting the property.</h3>
+  <div><p>student = {
+    name : "David Rayy",
+    sclass : "VI",
+    rollno : 12 };</p>
+    <p id="print-obj"></p>
+    <p id="del-prop"></p>
+  </div>
+  <br>
+  <button id="print-obj-btn"
+          onclick="exercise2()">PRINT OBJ
+  </button>
+  <button id="del-obj-btn"
+          onclick="deleteProp(exercise2())">DELETE OBJ PROP
+  </button>
+</div>
+
+<div>
+  <h3>3. Write a JavaScript program to get the length of a JavaScript object.</h3>
+  <div>
+    <p>Sample object :
+      var student = {
+      name : "David Rayy",
+      sclass : "VI",
+      rollno : 12 };</p>
+    <p id="obj-length"></p>
+  </div>
+  <br>
+  <button id="obj-length-btn"
+          onclick="exercise3()">OBJ LENGTH
+  </button>
+</div>
+
+<div>
+  <h3>4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading
+    status) of the following books.</h3>
+  <div>
+    <p>
+    <pre><code>const library = [
+          {
+          author: 'Bill Gates',
+          title: 'The Road Ahead',
+          readingStatus: true
+          },
+          {
+          author: 'Steve Jobs',
+          title: 'Walter Isaacson',
+          readingStatus: true
+          },
+          {
+          author: 'Suzanne Collins',
+          title: 'Mockingjay: The Final Book of The Hunger Games',
+          readingStatus: false
+          }];</code></pre>
+    </p>
+    <p id="status"></p>
+  </div>
+  <br>
+  <button id="display"
+          onclick="exercise4()">DISPLAY
+  </button>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
