@@ -1,21 +1,35 @@
-document.getElementById('change').addEventListener("click", function() {
+document.getElementById('form').addEventListener('submit', function (e) {
+  // e.preventDefault()
+  document.getElementById('modal').style.display = 'none';
+  const name = document.getElementById('i-name').value;
+  const password = document.getElementById('i-password').value;
+  const id = document.getElementById('i-id').value;
+  const profession = document.getElementById('i-profession').value;
 
-    document.getElementById('modal').style.display = 'none';
-    var name = document.getElementById('i-name').value;
-    var password = document.getElementById('i-password').value;
-    var id = document.getElementById('i-id').value;
+  const data =
+    'password=' +
+    password +
+    '&id=' +
+    id +
+    '&name=' +
+    name +
+    '&profession=' +
+    profession;
 
-    var data = 'password=' + password + '&id=' + id + '&name=' + name;
+  const xhttp = new XMLHttpRequest();
+  xhttp.open('POST', '/setUser');
+  xhttp.setRequestHeader(
+    'Content-Type',
+    'application/x-www-form-urlencoded; charset=UTF-8'
+  );
 
+  xhttp.onload = function () {
+    console.log(this.responseText);
+  };
 
-    const xhttp = new XMLHttpRequest();
-    xhttp.open('POST', "/setUser");
-    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  xhttp.send(data);
+});
 
-    xhttp.onload = function() {
-        console.log(this.responseText);
-    }
-
-    xhttp.send(data);
-
+document.getElementById('cancel').addEventListener('click', function () {
+  document.getElementById('modal').style.display = 'none';
 });
