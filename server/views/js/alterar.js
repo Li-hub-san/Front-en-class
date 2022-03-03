@@ -1,36 +1,44 @@
-document.getElementById('form').addEventListener('submit', function (e) {
-  // e.preventDefault()
+document.getElementById('change').addEventListener('click', function () {
   document.getElementById('modal').style.display = 'none';
   const name = document.getElementById('i-name').value;
   const password = document.getElementById('i-password').value;
   const id = document.getElementById('i-id').value;
   const profession = document.getElementById('i-profession').value;
 
-  const data =
-    'password=' +
-    password +
-    '&id=' +
-    id +
-    '&name=' +
-    name +
-    '&profession=' +
-    profession;
+  updateUser(
+    { name: name, password: password, id: id, profession: profession },
+    function (user) {
+      console.log(user);
+    }
+  );
+});
 
-  const xhttp = new XMLHttpRequest();
-  xhttp.open('POST', '/setUser');
-  xhttp.setRequestHeader(
+function updateUser(user, callback) {
+  const request = new XMLHttpRequest();
+  request.open('POST', '/setUser');
+
+  request.setRequestHeader(
     'Content-Type',
     'application/x-www-form-urlencoded; charset=UTF-8'
   );
 
-  xhttp.onload = function () {
-    console.log(this.responseText);
+  request.onload = function () {
+    const user = JSON.parse(this.responseText);
+
+    if (!!callback) {
+      callback(user);
+    }
   };
 
-  xhttp.send(data);
-  // location.reload();
-});
+  const data =
+    'password=' +
+    user.password +
+    '&id=' +
+    user.id +
+    '&name=' +
+    user.name +
+    '&profession=' +
+    user.profession;
 
-document.getElementById('cancel').addEventListener('click', function () {
-  document.getElementById('modal').style.display = 'none';
-});
+  request.send(data);
+}

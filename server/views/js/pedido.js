@@ -1,58 +1,68 @@
 function loadDoc() {
-  listUsers(function (users) {
-    printUserTable(users);
+  requestUsers(function (users) {
+    printTable(users);
+  });
 
-    printUserObjects(users);
-    printUser(users[1]);
-    listNames(users);
-    listProfessions(users);
-    listId(users);
-    hideTableColum(2);
-    hideTable();
+  document.getElementById('teste').addEventListener('click', function () {
+    requestUser(Math.floor(Math.random() * 3) + 1, function (user) {
+      printTable([user]);
+    });
   });
 }
 
-function printUserTable(users) {
-  const table = document.getElementById('table');
+function requestUsers(callback) {
+  // cria um novo pedido AJAX
+  const xhttp = new XMLHttpRequest();
 
-  users.forEach(function (user, index) {
-    const row = table.insertRow(index + 1);
+  // define o que é o método (basic CRUD: Create, Retrieve, update, delete -> POST, GET, PUT, DELETE) e o que é o url
+  xhttp.open('GET', '/listUsers');
 
-    insertCell(
-      row,
-      0,
-      "<button id='detalhe-" +
-        index +
-        "'>Detalhe</button>" +
-        "<button id='apagar-" +
-        index +
-        "'>Apagar</button>"
-    );
-    insertCell(row, 0, user.profession);
-    insertCell(row, 0, user.password);
-    insertCell(row, 0, user.name);
-    insertCell(row, 0, user.id);
-    insertCell(
-      row,
-      0,
-      `<div class="card"><br><img src="https://ecointelligentgrowth.net/wp-content/uploads/2020/08/user-placeholder-424x272.jpg" alt="Avatar" style="width:100%"><br><div class="container"><h4><b>${user.name}</b></h4><p>${user.profession}</p></div></div>`
-    );
-  });
-
-  addDetalheEvent(users);
-  addApagarEvent(users);
-}
-
-function listUsers(successCallback) {
-  const xmlHttpRequest = new XMLHttpRequest();
-
-  xmlHttpRequest.onload = function () {
+  // o que é para fazer quando o pedido terminar (receber a resposta)
+  xhttp.onload = function () {
+    // this.responseText -> resposta do servidor em texto
+    // JSON.parse -> parse dessa resposta para um objecto
+    // .user -> aceder à propriedade da resposta que contém o array de users
     const users = JSON.parse(this.responseText).user;
-    successCallback && successCallback(users);
+
+    // função assincrone (sem return) -> se existir uma função, chamar a função com os users
+    if (!!callback) {
+      callback(users);
+    }
   };
 
-  xmlHttpRequest.open('GET', '/listUsers');
+  // executa o pedido
+  xhttp.send();
+}
+
+function requestUser(id, callback) {
+  let xmlHttpRequest = new XMLHttpRequest();
+  xmlHttpRequest.open('GET', '/getUser?id=' + id);
+
+  xmlHttpRequest.onload = function () {
+    const user = JSON.parse(this.responseText);
+
+    if (!!callback) {
+      callback(user);
+    }
+  };
+
   xmlHttpRequest.send();
+}
+
+function printTable(users) {
+  const table = document.getElementById('table');
+
+  users.forEach(function (element, index) {
+    const row = table.insertRow(index + 1);
+
+    insertCell(row, 0, "<button id='" + index + "'>Detalhe</button>");
+    insertCell(row, 0, element.profession);
+    insertCell(row, 0, element.id);
+    insertCell(row, 0, element.password);
+    insertCell(row, 0, element.name);
+  });
+
+  addEventButton(users);
 }
 
 function insertCell(row, index, value) {
@@ -60,52 +70,17 @@ function insertCell(row, index, value) {
   cell1.innerHTML = value;
 }
 
-function addDetalheEvent(users) {
+function addEventButton(users) {
   users.forEach(function (element, index) {
-    let btn = document.getElementById('detalhe-' + index);
+    let btn = document.getElementById(index);
     btn.addEventListener('click', function () {
       document.getElementById('modal').style.display = 'block';
-
       document.getElementById('i-name').value = element.name;
       document.getElementById('i-password').value = element.password;
       document.getElementById('i-id').value = element.id;
       document.getElementById('i-profession').value = element.profession;
     });
   });
-}
-
-function addApagarEvent(users) {
-  users.forEach(function (user, index) {
-    let btn = document.getElementById('apagar-' + index);
-
-    btn.addEventListener('click', function () {
-      const data = 'id=' + user.id;
-
-      const xhttp = new XMLHttpRequest();
-      xhttp.open('DELETE', '/deleteUser');
-      xhttp.setRequestHeader(
-        'Content-Type',
-        'application/x-www-form-urlencoded; charset=UTF-8'
-      );
-
-      xhttp.onload = function () {
-        console.log(this.responseText);
-        // final do 'pedido', refresh automático
-        location.reload();
-      };
-
-      xhttp.send(data);
-    });
-  });
-}
-
-function mandarPedidoBackend() {
-  // Cria novo pedido
-  let xmlHttpRequest = new XMLHttpRequest();
-
-  // Define o método (GET, POST, PUT, DELETE) e o URL
-  xmlHttpRequest.open('GET', '/exemplo');
-  xmlHttpRequest.send();
 }
 
 loadDoc();
