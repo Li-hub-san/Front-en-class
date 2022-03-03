@@ -7,7 +7,7 @@ function loadDoc() {
     listNames(users);
     listProfessions(users);
     listId(users);
-    hideTableColum(1);
+    hideTableColum(2);
     hideTable();
   });
 }
@@ -28,11 +28,15 @@ function printUserTable(users) {
         index +
         "'>Apagar</button>"
     );
-
     insertCell(row, 0, user.profession);
     insertCell(row, 0, user.password);
     insertCell(row, 0, user.name);
     insertCell(row, 0, user.id);
+    insertCell(
+      row,
+      0,
+      `<div class="card"><br><img src="https://ecointelligentgrowth.net/wp-content/uploads/2020/08/user-placeholder-424x272.jpg" alt="Avatar" style="width:100%"><br><div class="container"><h4><b>${user.name}</b></h4><p>${user.profession}</p></div></div>`
+    );
   });
 
   addDetalheEvent(users);
