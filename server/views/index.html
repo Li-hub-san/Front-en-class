@@ -2,146 +2,41 @@
 <html>
 
 <head>
-  <title>Aula 18</title>
-  <link rel="stylesheet"
-        type="text/css"
-        href="css/style.css">
+    <title>Aula 18</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
 
 
-<table id="table">
-  <tr>
-    <th>Card</th>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Password</th>
-    <th>Profession</th>
-    <th>Preview</th>
-  </tr>
-</table>
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Id</th>
+            <th>Preview</th>
+        </tr>
+    </table>
 
-<p id="p-insert">
-  <button id="btn-insert"
-          type="button">Inserir
-  </button>
-</p>
+    <div id="modal">
+        <label>Name</label>
+        <input id="i-name" type="text" />
+        <br>
+        <label>Password</label>
+        <input id="i-password" type="text" />
+        <br>
+        <label>ID</label>
+        <input id="i-id" type="text" disabled/>
+        <br>
+        <button id="change">Alterar</button>
+    </div>
 
-<button id="btn-hide-column"
-        type="button">Hide Column
-</button>
-
-<button id="btn-hide-table"
-        type="button">Hide Table
-</button>
-
-<button id="btn-prt-obj"
-        type="button">Print Object
-</button>
-
-<button id="btn-prt-1user"
-        type="button">Print User
-</button>
-
-<button id="btn-list-names"
-        type="button">List Names
-</button>
-
-<button id="btn-list-professions"
-        type="button">List Professions
-</button>
-
-<button id="btn-list-id"
-        type="button">List ID
-</button>
-
-<button type="button"
-        onclick="removeRow()">Remove Odd Rows
-</button>
-<br>
-
-<div id="prt-obj"></div>
-<br>
-
-<div id="prt-1user"></div>
-<br>
-
-<div id="list-names"></div>
-<br>
-
-<div id="list-professions"></div>
-<br>
-
-<div id="list-id"></div>
-<br>
-
-<div id="modal">
-  <form id="form">
-    <label for="i-id">ID</label>
-    <input id="i-id"
-           type="text"
-           disabled />
-    <br>
-    <label for="i-name">Name</label>
-    <input id="i-name"
-           type="text" />
-    <br>
-    <label for="i-password">Password</label>
-    <input id="i-password"
-           type="password" />
-    <br>
-    <input type="checkbox"
-           onclick="showPassword()" /> Mostrar Pass
-    <br>
-    <label for="i-profession">Profession</label>
-    <input id="i-profession"
-           type="text" />
-    <br>
-    <button id="change"
-            type="submit">Alterar
-    </button>
-    <!--  Cancelar tem que ser type button senão dá refresh na página (se não tiver type button, por ser formulário, é dado submit)  -->
-    <button id="cancel"
-            type="button">Cancelar
-    </button>
-  </form>
-</div>
-
-<div id="modal-insert">
-  <form id="form-insert">
-    <label for="name">Name</label>
-    <input id="name"
-           type="text"
-           required />
-    <br>
-    <label for="password">Password</label>
-    <input id="password"
-           type="password"
-           required />
-    <br>
-    <label for="profession">Profession</label>
-    <input id="profession"
-           type="text"
-           required />
-    <br>
-    <button id="insert"
-            type="submit">Inserir
-    </button>
-    <!--  Cancelar tem que ser type button senão dá refresh na página (se não tiver type button, por ser formulário, é dado submit)  -->
-    <button id="cancel-insert"
-            type="button">Cancelar
-    </button>
-  </form>
-</div>
 
 </body>
-<script src="js/pedido.js"></script>
-<script src="js/alterar.js"></script>
-<script src="js/inserir.js"></script>
-<script src="js/script.js"></script>
+<script src="./js/pedido.js"></script>
+<script src="./js/alterar.js"></script>
 
 </html>
