@@ -30,35 +30,53 @@
   </button>
 </p>
 
-<div id="prt-obj"></div>
-<br>
+<button id="btn-hide-column"
+        type="button">Hide Column
+</button>
+
+<button id="btn-hide-table"
+        type="button">Hide Table
+</button>
+
 <button id="btn-prt-obj"
         type="button">Print Object
 </button>
+
+<button id="btn-prt-1user"
+        type="button">Print User
+</button>
+
+<button id="btn-list-names"
+        type="button">List Names
+</button>
+
+<button id="btn-list-professions"
+        type="button">List Professions
+</button>
+
+<button id="btn-list-id"
+        type="button">List ID
+</button>
+
+<button type="button"
+        onclick="removeRow()">Remove Odd Rows
+</button>
 <br>
+
+<div id="prt-obj"></div>
 <br>
 
 <div id="prt-1user"></div>
 <br>
-<button id="btn-prt-1user"
-        type="button">Print User
-</button>
-<br>
-<br>
 
 <div id="list-names"></div>
-<br>
-<button id="btn-list-names"
-        type="button">List Names
-</button>
-<br>
 <br>
 
 <div id="list-professions"></div>
 <br>
-<button id="btn-list-professions"
-        type="button">List Professions
-</button>
+
+<div id="list-id"></div>
+<br>
 
 <div id="modal">
   <form id="form">
@@ -73,7 +91,10 @@
     <br>
     <label for="i-password">Password</label>
     <input id="i-password"
-           type="text" />
+           type="password" />
+    <br>
+    <input type="checkbox"
+           onclick="showPassword()" /> Mostrar Pass
     <br>
     <label for="i-profession">Profession</label>
     <input id="i-profession"
@@ -93,15 +114,18 @@
   <form id="form-insert">
     <label for="name">Name</label>
     <input id="name"
-           type="text" />
+           type="text"
+           required />
     <br>
     <label for="password">Password</label>
     <input id="password"
-           type="text" />
+           type="password"
+           required />
     <br>
     <label for="profession">Profession</label>
     <input id="profession"
-           type="text" />
+           type="text"
+           required />
     <br>
     <button id="insert"
             type="submit">Inserir

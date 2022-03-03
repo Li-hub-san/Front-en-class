@@ -35,6 +35,21 @@ app.get('/getUser', function (req, res) {
   res.send(entity);
 });
 
+// localhost:3000/searchUserByName=
+app.get('/searchUserByName', function (req, res) {
+  let query = req.query.name;
+  let matchedUsers = [];
+
+  // podia ser qualquer propriedade
+  result.user.forEach((user) => {
+    if (user['name'].indexOf(query) > -1) {
+      matchedUsers.push(user);
+    }
+  });
+
+  res.send(matchedUsers);
+});
+
 app.post('/setUser', function (req, res) {
   let id = +req.body.id;
   let name = req.body.name;

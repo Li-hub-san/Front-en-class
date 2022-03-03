@@ -28,6 +28,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
   };
 
   xhttp.send(data);
+  // location.reload();
 });
 
 document.getElementById('cancel').addEventListener('click', function () {

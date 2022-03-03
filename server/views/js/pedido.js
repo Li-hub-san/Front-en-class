@@ -1,29 +1,42 @@
 function loadDoc() {
   listUsers(function (users) {
-    const table = document.getElementById('table');
+    printUserTable(users);
 
-    users.forEach(function (user, index) {
-      const row = table.insertRow(index + 1);
-
-      insertCell(
-        row,
-        0,
-        "<button id='detalhe-" +
-          index +
-          "'>Detalhe</button>" +
-          "<button id='apagar-" +
-          index +
-          "'>Apagar</button>"
-      );
-      insertCell(row, 0, user.profession);
-      insertCell(row, 0, user.password);
-      insertCell(row, 0, user.name);
-      insertCell(row, 0, user.id);
-    });
-
-    addDetalheEvent(users);
-    addApagarEvent(users);
+    printUserObjects(users);
+    printUser(users[1]);
+    listNames(users);
+    listProfessions(users);
+    listId(users);
+    hideTableColum(1);
+    hideTable();
   });
+}
+
+function printUserTable(users) {
+  const table = document.getElementById('table');
+
+  users.forEach(function (user, index) {
+    const row = table.insertRow(index + 1);
+
+    insertCell(
+      row,
+      0,
+      "<button id='detalhe-" +
+        index +
+        "'>Detalhe</button>" +
+        "<button id='apagar-" +
+        index +
+        "'>Apagar</button>"
+    );
+
+    insertCell(row, 0, user.profession);
+    insertCell(row, 0, user.password);
+    insertCell(row, 0, user.name);
+    insertCell(row, 0, user.id);
+  });
+
+  addDetalheEvent(users);
+  addApagarEvent(users);
 }
 
 function listUsers(successCallback) {
@@ -82,13 +95,13 @@ function addApagarEvent(users) {
   });
 }
 
-// function mandarPedidoBackend() {
-//   // Cria novo pedido
-//   let xmlHttpRequest = new XMLHttpRequest();
-//
-//   // Define o método (GET, POST, PUT, DELETE) e o URL
-//   xmlHttpRequest.open('GET', '/exemplo');
-//   xmlHttpRequest.send()
-// }
+function mandarPedidoBackend() {
+  // Cria novo pedido
+  let xmlHttpRequest = new XMLHttpRequest();
+
+  // Define o método (GET, POST, PUT, DELETE) e o URL
+  xmlHttpRequest.open('GET', '/exemplo');
+  xmlHttpRequest.send();
+}
 
 loadDoc();
