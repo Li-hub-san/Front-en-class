@@ -3,11 +3,20 @@ function loadDoc() {
     printTable(users);
   });
 
-  document.getElementById('teste').addEventListener('click', function () {
+  document.getElementById('print-user').addEventListener('click', function () {
     requestUser(Math.floor(Math.random() * 3) + 1, function (user) {
       printTable([user]);
     });
   });
+
+  document
+    .getElementById('print-even-users')
+    .addEventListener('click', function () {
+      requestUsers(function (users) {
+        const evenUsers = users.filter((user) => user.id % 2 === 0);
+        printTable(evenUsers, true);
+      });
+    });
 }
 
 function requestUsers(callback) {
@@ -49,20 +58,34 @@ function requestUser(id, callback) {
   xmlHttpRequest.send();
 }
 
-function printTable(users) {
+function printTable(users, clear = false) {
   const table = document.getElementById('table');
 
-  users.forEach(function (element, index) {
-    const row = table.insertRow(index + 1);
+  if (clear) {
+    clearTable();
+  }
 
-    insertCell(row, 0, "<button id='" + index + "'>Detalhe</button>");
-    insertCell(row, 0, element.profession);
-    insertCell(row, 0, element.id);
-    insertCell(row, 0, element.password);
-    insertCell(row, 0, element.name);
+  users.forEach(function (user, index) {
+    // o prof tinha index + 1 -> imprime na 1ªlinha. Achei melhor adicionar no fim.
+    const row = table.insertRow(-1);
+
+    insertCell(row, 0, user.id);
+    insertCell(row, 1, user.name);
+    insertCell(row, 2, user.password);
+    insertCell(row, 3, user.profession);
+    insertCell(row, 4, "<button id='" + index + "'>Detalhe</button>");
   });
 
   addEventButton(users);
+}
+
+// limpa a tabela de todos os registos (mantém o header)
+function clearTable() {
+  const table = document.getElementById('table');
+  // vai da última linha até à segunda linha (não apaga o header)
+  for (let i = table.rows.length - 1; i > 0; i--) {
+    table.deleteRow(i);
+  }
 }
 
 function insertCell(row, index, value) {

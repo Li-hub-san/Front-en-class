@@ -94,9 +94,9 @@ function removeRow() {
 
   for (let i = 0; i < rows.length; i++) {
     let row = rows[i];
-    let even = i % 2;
+    let even = i % 2 === 0;
 
-    if (even) {
+    if (!even) {
       row.style.display = 'none';
       console.log(i);
     }
