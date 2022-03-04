@@ -1,5 +1,5 @@
 document.getElementById('form').addEventListener('submit', function (e) {
-  // e.preventDefault()
+  // e.preventDefault
   document.getElementById('modal').style.display = 'none';
   const name = document.getElementById('i-name').value;
   const password = document.getElementById('i-password').value;
