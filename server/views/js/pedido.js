@@ -3,6 +3,10 @@ function loadDoc() {
     printTable(users);
   });
 
+  // for (let i = 1; i <= 3; i++) {
+  //   printUser('user-' + i, i);
+  // }
+
   printUser('user-1', 1);
   printUser('user-2', 2);
   printUser('user-3', 3);
@@ -108,9 +112,9 @@ function getDate() {
   );
 }
 
-function printUser(userId, user) {
-  document.getElementById(userId).addEventListener('click', function () {
-    requestUser(user, function (user) {
+function printUser(buttonId, userId) {
+  document.getElementById(buttonId).addEventListener('click', function () {
+    requestUser(userId, function (user) {
       printTable([user], true);
     });
   });

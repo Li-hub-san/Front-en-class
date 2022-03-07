@@ -1,27 +1,9 @@
 document.getElementById('form').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const inputNameEl = document.getElementById('i-name');
-  const inputPasswordEl = document.getElementById('i-password');
-
-  if (inputNameEl.value === '' && inputPasswordEl.value === '') {
-    inputNameEl.style.border = '2px solid red';
-    inputPasswordEl.style.border = '2px solid red';
+  const inputValid = isInputValid();
+  if (!inputValid) {
     return;
-  }
-
-  if (inputNameEl.value === '') {
-    inputNameEl.style.border = '2px solid red';
-    return;
-  } else {
-    inputNameEl.style.border = 'revert';
-  }
-
-  if (inputPasswordEl.value === '') {
-    inputPasswordEl.style.border = '2px solid red';
-    return;
-  } else {
-    inputPasswordEl.style.border = 'revert';
   }
 
   document.getElementById('modal').style.display = 'none';
@@ -57,4 +39,34 @@ function updateUser(user, callback) {
   // const data = JSON.stringify(user);
 
   request.send(data);
+}
+
+// apenas se não estiver a usar o required no input (formulário)
+function isInputValid() {
+  const nameEl = document.getElementById('i-name');
+  const passwordEl = document.getElementById('i-password');
+
+  if (nameEl.value === '' || passwordEl.value === '') {
+    if (nameEl.value === '') {
+      nameEl.classList.add('invalid');
+    } else {
+      nameEl.classList.remove('invalid');
+    }
+
+    if (passwordEl.value === '') {
+      passwordEl.classList.add('invalid');
+    } else {
+      passwordEl.classList.remove('invalid');
+    }
+
+    return false;
+  }
+
+  // se chegar aqui significa que não entrou nos ifs.
+
+  // quando já estão preenchidos os campos, remover a classe invalid
+  nameEl.classList.remove('invalid');
+  passwordEl.classList.remove('invalid');
+
+  return true;
 }
