@@ -3,23 +3,9 @@ function loadDoc() {
     printTable(users);
   });
 
-  document.getElementById('user-1').addEventListener('click', function () {
-    requestUser(1, function (user) {
-      printTable([user], true);
-    });
-  });
-
-  document.getElementById('user-2').addEventListener('click', function () {
-    requestUser(2, function (user) {
-      printTable([user], true);
-    });
-  });
-
-  document.getElementById('user-3').addEventListener('click', function () {
-    requestUser(3, function (user) {
-      printTable([user], true);
-    });
-  });
+  printUser('user-1', 1);
+  printUser('user-2', 2);
+  printUser('user-3', 3);
 
   document.getElementById('refresh').addEventListener('click', function () {
     requestUsers(function (users) {
@@ -117,8 +103,17 @@ function addEventButton(users) {
 
 function getDate() {
   const date = new Date();
+  return (
+    date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
+  );
+}
 
-  return date.getDay() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+function printUser(userId, user) {
+  document.getElementById(userId).addEventListener('click', function () {
+    requestUser(user, function (user) {
+      printTable([user], true);
+    });
+  });
 }
 
 loadDoc();
